@@ -1,12 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, NavLink, Switch,Route } from "react-router-dom";
 import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Routes,
-  Switch,
-} from "react-router-dom";
-import { LiNavItems, NavbarContainer, NLink, UlNavItems } from "./NavbarElements";
+  LiNavItems,
+  NavbarContainer,
+  NLink,
+  UlNavItems,
+
+} from "./NavbarElements";
 
 const navbarData = [
   {
@@ -38,33 +38,52 @@ const navbarData = [
 
 const Navbar = () => {
   return (
-    <NavbarContainer>
-      <UlNavItems>
-        {navbarData.map((el, id) => (
-          <LinkItem el={el} key={id} />
-        ))}
-      </UlNavItems>
-    </NavbarContainer>
-
-    <Route>
-
-    </Route>
+    <>
+      <NavbarContainer>
+        <UlNavItems>
+          {navbarData.map((el, id) => (
+            <LinkItem el={el} key={id} />
+          ))}
+        </UlNavItems>
+      </NavbarContainer>
+      <Router>
+        <Route exact path="/">
+          {/* <About /> */}
+        </Route>
+        <Route path="/services">
+          {/* <Service /> */}
+        </Route>
+        <Route path="/works">
+          {/* <Portfolio /> */}
+        </Route>
+        <Route path="/blogs">
+          {/* <Blog /> */}
+        </Route>
+        <Route path="/contact">
+          {/* <Contact /> */}
+        </Route>
+        <Route path="/about">
+          {/* <About /> */}
+        </Route>
+      
+    </Router>
+    </>
   );
 };
 
 export default Navbar;
 
 const LinkItem = (props) => {
-    const { title, to } = props.el;
-    return (
-      <LiNavItems>
-        <NLink
-          to={to}
+  const { title, to } = props.el;
+  return (
+    <LiNavItems>
+      <NLink
+        to={to}
         //   activeClassName="text-purple-600"
         //   className="text-gray-800 text-medium hover:text-purple-600"
-        >
-          {title}
-        </NLink>
-      </LiNavItems>
-    );
-}
+      >
+        {title}
+      </NLink>
+    </LiNavItems>
+  );
+};
