@@ -27,8 +27,6 @@ export const UlNavItems = styled.ul`
   padding:0;
 `;
 export const LiNavItems = styled.li`
-  /* color: rgb(31 41 55);
-   */
   margin: .75rem;
   @media (min-width: 1024px) {
     margin-left: 1.25rem; 

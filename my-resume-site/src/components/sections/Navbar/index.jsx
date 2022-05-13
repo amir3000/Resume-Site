@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, NavLink, Switch,Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import About from "../../pages/About";
 import {
   LiNavItems,
   NavbarContainer,
   NLink,
   UlNavItems,
-
 } from "./NavbarElements";
 
 const navbarData = [
@@ -48,25 +48,14 @@ const Navbar = () => {
       </NavbarContainer>
       <Router>
         <Route exact path="/">
-          {/* <About /> */}
+          <About /> 
         </Route>
-        <Route path="/services">
-          {/* <Service /> */}
-        </Route>
-        <Route path="/works">
-          {/* <Portfolio /> */}
-        </Route>
-        <Route path="/blogs">
-          {/* <Blog /> */}
-        </Route>
-        <Route path="/contact">
-          {/* <Contact /> */}
-        </Route>
-        <Route path="/about">
-          {/* <About /> */}
-        </Route>
-      
-    </Router>
+        <Route path="/services">{/* <Service /> */}</Route>
+        <Route path="/works">{/* <Portfolio /> */}</Route>
+        <Route path="/blogs">{/* <Blog /> */}</Route>
+        <Route path="/contact">{/* <Contact /> */}</Route>
+        <Route path="/about">{/* <About /> */}</Route>
+      </Router>
     </>
   );
 };
@@ -77,13 +66,7 @@ const LinkItem = (props) => {
   const { title, to } = props.el;
   return (
     <LiNavItems>
-      <NLink
-        to={to}
-        //   activeClassName="text-purple-600"
-        //   className="text-gray-800 text-medium hover:text-purple-600"
-      >
-        {title}
-      </NLink>
+      <NLink to={to}>{title}</NLink>
     </LiNavItems>
   );
 };
