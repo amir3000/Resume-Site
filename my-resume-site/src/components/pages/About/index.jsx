@@ -6,8 +6,8 @@ const About = () => {
     <AboutWrapper>
       <ContentContainer>
         <HowAmISection>
-          <H3>Who am i?</H3>
-          <Content>
+          <H3Title>Who am i?</H3Title>
+          <PContent>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             dignissimos aperiam, quos ratione beatae ipsam distinctio sit
             dolorum labore voluptas sunt quo itaque harum at aliquam, molestiae
@@ -15,7 +15,7 @@ const About = () => {
             dolorum totam eum sit, possimus, temporibus distinctio dolor
             consequatur tenetur quo reprehenderit asperiores velit ullam tempora
             nam quod. Quia debitis error amet atque ad dolorum architecto?
-          </Content>
+          </PContent>
         </HowAmISection>
         <SkillsSection></SkillsSection>
       </ContentContainer>
