@@ -15,7 +15,7 @@ export const AboutWrapper = styled.div`
 export const ContentContainer = styled.div`
   width: 100%;
 `;
-export const HowAmISection = styled.div`
+export const HowAmIWrapper = styled.div`
   @media (min-width: 768px) {
     margin-left: 1rem;
     margin-right: 1rem;

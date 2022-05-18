@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
   z-index: 10;
@@ -34,7 +34,7 @@ export const LiNavItems = styled.li`
     align-items: center;
   }
   `;
-export const NLink = styled(NavLink)`
+export const NLink = styled(Link)`
 
 text-decoration: none;
 color: rgb(31 41 55);

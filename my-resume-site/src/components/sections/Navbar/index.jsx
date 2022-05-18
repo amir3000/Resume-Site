@@ -1,6 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import About from "../../pages/About";
+import Blog from "../../pages/Blog";
+import Portfolio from "../../pages/Protfolio";
+import Services from "../../pages/Services";
+import Contact from "../../pages/";
 import {
   LiNavItems,
   NavbarContainer,
@@ -12,27 +16,27 @@ const navbarData = [
   {
     id: 1,
     title: "About",
-    to: "/about",
+    to: "/About",
   },
   {
     id: 2,
     title: "Services",
-    to: "/services",
+    to: "/Services",
   },
   {
     id: 3,
     title: "Works",
-    to: "/works",
+    to: "/Works",
   },
   {
     id: 4,
-    title: "Blogs",
-    to: "/blogs",
+    title: "Blog",
+    to: "/Blog",
   },
   {
     id: 5,
     title: "Contact",
-    to: "/contact",
+    to: "/Contact",
   },
 ];
 
@@ -46,16 +50,14 @@ const Navbar = () => {
           ))}
         </UlNavItems>
       </NavbarContainer>
-      <Router>
-        <Route exact path="/">
-          <About /> 
-        </Route>
-        <Route path="/services">{/* <Service /> */}</Route>
-        <Route path="/works">{/* <Portfolio /> */}</Route>
-        <Route path="/blogs">{/* <Blog /> */}</Route>
-        <Route path="/contact">{/* <Contact /> */}</Route>
-        <Route path="/about">{/* <About /> */}</Route>
-      </Router>
+      <Routes>
+        <Route path="/" element={<About />} exact></Route>
+        <Route path="/Services" element={<Services />}></Route>
+        <Route path="/Works" element={<Portfolio />}></Route>
+        <Route path="/Blog" element={<Blog />}></Route>
+        <Route path="/Contact" elements={<Contact />}></Route>
+        <Route path="/About" element={<About />}></Route>
+      </Routes>
     </>
   );
 };
