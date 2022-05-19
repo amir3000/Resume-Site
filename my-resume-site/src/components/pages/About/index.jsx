@@ -7,15 +7,16 @@ import {
   HowAmIWrapper,
   PContent,
 } from "./AboutElements";
+import Skills from "./Skills";
 
 const About = () => {
   return (
     <>
-      <AboutContainer>
-        <AboutWrapper>
+      <AboutContainer id="ACont">
+        <AboutWrapper id="Awrapper">
           <ContentContainer>
             <HowAmIWrapper>
-              <H3Title>AboutWho am i?</H3Title>
+              <H3Title>Who Am I ?</H3Title>
               <PContent>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Veritatis dignissimos aperiam, quos ratione beatae ipsam
@@ -27,9 +28,9 @@ const About = () => {
                 debitis error amet atque ad dolorum architecto?
               </PContent>
             </HowAmIWrapper>
-            {/* <SkillsWrapper>
-
-      </SkillsWrapper> */}
+            
+            <Skills />
+            
           </ContentContainer>
         </AboutWrapper>
       </AboutContainer>

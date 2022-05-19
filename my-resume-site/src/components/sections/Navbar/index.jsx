@@ -35,7 +35,7 @@ const navbarData = [
   },
   {
     id: 5,
-    title: "Contact",
+    title: "Contact Me",
     to: "/Contact",
   },
 ];

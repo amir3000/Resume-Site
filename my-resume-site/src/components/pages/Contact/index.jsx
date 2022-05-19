@@ -1,5 +1,5 @@
 import React from "react";
-import ContactElements from "ContactElements";
+// import ContactElements from "ContactElements";
 const Contact = () => {
   return (
     <>
