@@ -12,7 +12,8 @@ export const SkillProgressWrap = styled.div`
   width: 100%;
   margin-bottom: 0.25rem;
   @media (min-width: 768px) {
-    width: 50%;
+    width: 45%;
+    margin-right: 2rem;
   }
 `;
 export const TitleContainer = styled.div`
@@ -31,7 +32,6 @@ export const TitleWrapp = styled.div`
   background-color: rgba(249, 250, 251, 1);
 `;
 export const H5Title = styled.h5`
- 
   color: rgba(156, 163, 175, 1);
   font-weight: 300;
   font-size: inherit;
@@ -45,10 +45,10 @@ export const ProgressBarWrapp = styled.div`
   position: relative;
   height: 0.5rem;
   border-radius: 0.25rem;
-  background-color: rgba(221, 214, 254,1);
+  background-color: rgba(221, 214, 254, 1);
 `;
 export const ProgressBar = styled.div`
-   width: ${(props)=> props.percentage};
+  width: ${(props) => props.percentage};
   top: 0;
   left: 0;
   position: absolute;
