@@ -31,14 +31,7 @@ export const TitleWrapp = styled.div`
   background-color: rgba(249, 250, 251, 1);
 `;
 export const H5Title = styled.h5`
-  /* display: block;
-    font-size: 0.83em;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;  */
-
+ 
   color: rgba(156, 163, 175, 1);
   font-weight: 300;
   font-size: inherit;
