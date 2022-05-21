@@ -82,7 +82,7 @@ const SkillItem = (props) => {
       <TitleContainer id="TitleContainer">
         <TitleWrapp id="TitleWrapp">
           <H5Title id="H5">{skill.title}</H5Title>
-          <Persentage id="Persentage">{skill.persentage}</Persentage>
+          <Persentage id="Percentage">{skill.percentage} </Persentage>
         </TitleWrapp>
       </TitleContainer>
       <ProgressBarWrapp>

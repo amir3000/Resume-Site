@@ -55,7 +55,7 @@ export const ProgressBarWrapp = styled.div`
   background-color: rgba(221, 214, 254,1);
 `;
 export const ProgressBar = styled.div`
-  width: 70%;
+   width: ${(props)=> props.percentage};
   top: 0;
   left: 0;
   position: absolute;
