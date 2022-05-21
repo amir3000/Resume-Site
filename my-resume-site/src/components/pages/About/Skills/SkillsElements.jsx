@@ -25,9 +25,9 @@ export const TitleContainer = styled.div`
 `;
 export const TitleWrapp = styled.div`
   margin-bottom: 0.25rem;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
   background-color: rgba(249, 250, 251, 1);
 `;
 export const H5Title = styled.h5`
