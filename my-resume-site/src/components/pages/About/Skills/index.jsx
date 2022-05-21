@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    H3Container,
+  H3Container,
   H3SkillTitle,
   H3Wrapper,
   H5Title,
@@ -55,6 +55,26 @@ const Skills = () => {
       id: 8,
       title: "Git, Github",
       percentage: "80%",
+    },
+    {
+      id: 9,
+      title: "Styled Css",
+      percentage: "85%",
+    },
+    {
+      id: 10,
+      title: "DevOps",
+      percentage: "75%",
+    },
+    {
+      id: 11,
+      title: "UI/UX Design",
+      percentage: " 60%",
+    },
+    {
+      id: 12,
+      title: "Figma",
+      percentage: "70%",
     },
   ];
   return (
