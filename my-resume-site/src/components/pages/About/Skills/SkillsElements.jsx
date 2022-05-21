@@ -52,7 +52,7 @@ export const ProgressBarWrapp = styled.div`
   position: relative;
   height: 0.5rem;
   border-radius: 0.25rem;
-  /* background-color: rgba(221, 214, 254,1); */
+  background-color: rgba(221, 214, 254,1);
 `;
 export const ProgressBar = styled.div`
   width: 70%;
