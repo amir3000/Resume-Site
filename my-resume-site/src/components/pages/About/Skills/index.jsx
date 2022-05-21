@@ -1,5 +1,4 @@
 import React from "react";
-import { H3Title } from "../AboutElements";
 import {
     H3Container,
   H3SkillTitle,

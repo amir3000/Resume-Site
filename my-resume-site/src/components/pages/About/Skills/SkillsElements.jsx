@@ -10,16 +10,16 @@ export const SkillsWrapper = styled.div`
 `;
 export const SkillProgressWrap = styled.div`
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   @media (min-width: 768px) {
     width: 50%;
   }
-  
 `;
 export const TitleContainer = styled.div`
   margin-bottom: -1rem;
+  margin-top: -15px;
   @media (min-width: 768px) {
-    margin-left: 1rem;
+    margin-left: 0rem;
     margin-right: 1rem;
   }
 `;
@@ -67,7 +67,7 @@ export const H3Container = styled.h3`
   width: 100%;
 `;
 export const H3Wrapper = styled.div`
-/* display:block; */
+  /* display:block; */
   @media (min-width: 768px) {
     margin-left: 1rem;
     margin-right: 1rem;
