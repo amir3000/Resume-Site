@@ -4,7 +4,7 @@ import About from "../../pages/About";
 import Blog from "../../pages/Blog";
 import Portfolio from "../../pages/Protfolio";
 import Services from "../../pages/Services";
-import Contact from "../../pages/";
+import Contact from "../../pages/Contact";
 import {
   LiNavItems,
   NavbarContainer,
@@ -35,7 +35,7 @@ const navbarData = [
   },
   {
     id: 5,
-    title: "Contact Me",
+    title: "Contact",
     to: "/Contact",
   },
 ];
@@ -52,11 +52,11 @@ const Navbar = () => {
       </NavbarContainer>
       <Routes>
         <Route path="/" element={<About />} exact></Route>
-        <Route path="/Services" element={<Services />}></Route>
-        <Route path="/Works" element={<Portfolio />}></Route>
-        <Route path="/Blog" element={<Blog />}></Route>
-        <Route path="/Contact" elements={<Contact />}></Route>
-        <Route path="/About" element={<About />}></Route>
+        <Route path="Services" element={<Services />}></Route>
+        <Route path="Works" element={<Portfolio />}></Route>
+        <Route path="Blog" element={<Blog />}></Route>
+        <Route path="Contact" element={<Contact />}></Route>
+        <Route path="About" element={<About />}></Route>
       </Routes>
     </>
   );

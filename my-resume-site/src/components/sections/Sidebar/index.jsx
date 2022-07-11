@@ -73,7 +73,7 @@ const socials = [
 const Sidebar = () => {
   return (
     <SidebarContainer>
-      <ImageWrapper>
+      <ImageWrapper id='img-wrap'>
         <MyImage src={profile} />
       </ImageWrapper>
       <InfoWrapper>

@@ -1,11 +1,12 @@
 import React from "react";
-// import ContactElements from "ContactElements";
+//  import ContactElements from "ContactElements";
 const Contact = () => {
   return (
     <>
-      <div>Hello World !</div> 
-      
-      <p>In the Name Of</p>
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name" />
+      </form>
     </>
   );
 };
