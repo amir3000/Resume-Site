@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Joi from "joi";
 import {
   SectionContainer,
   FormWrapper,
@@ -12,13 +13,44 @@ import {
   BtnSubmit,
   MessageInput,
 } from "./ContactElements";
-//  import ContactElements from "ContactElements";
 const Contact = () => {
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    message:'',
+    errors: {},
+  });
+
+  const schema = Joi.object({
+    name: Joi.string().alphanum().min(3).max(30).required(),
+    email: Joi.string()
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
+      .required(),
+    message: Joi.string().required().min(5).max(500),
+  });
+  const validation = ()=> {
+    const result  = schema.validate( state, {abortEarly:true});
+    console.log(result);
+  }
+
+ const handleChange = ({currentTarget : target})  => {
+  const tmp = {...state}
+  console.log(target.name);
+  tmp[target.name] = target.value;
+  setState(tmp)
+
+ }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validation()
+   };
+
   return (
     <>
       <SectionContainer>
         <FormWrapper id="frm-wrp">
-          <FormElements>
+          <FormElements id="form-tag" onSubmit={handleSubmit}>
             <H3titleWrapp id="h3-wrp">
               <H3Title>Get in Touch</H3Title>
             </H3titleWrapp>
@@ -30,8 +62,11 @@ const Contact = () => {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    required
+                    value={state.name}
+                    onChange={handleChange}
+                    // required
                   />
+                  
                 </FiledMargin>
               </FiledWrapper>
             </FormFileds>
@@ -41,9 +76,10 @@ const Contact = () => {
                 <FiledMargin>
                   <InputFiled
                     type="Email"
-                    name="Email"
+                    name="email"
                     placeholder="Eamil:"
-                    required
+                    value={state.email}
+                    onChange={handleChange}
                   />
                 </FiledMargin>
               </FiledWrapper>
@@ -54,9 +90,11 @@ const Contact = () => {
                 <FiledMargin>
                   <InputFiled
                     type="text"
-                    name="Subject"
+                    name="subject"
                     placeholder="Subject:"
-                    required
+                    value={state.subject}
+                    onChange={handleChange}
+                    // required
                   />
                 </FiledMargin>
               </FiledWrapper>
@@ -69,7 +107,9 @@ const Contact = () => {
                     rows="6"
                     name="message"
                     placeholder=" Your message"
-                    required
+                    value={state.message}
+                    onChange={handleChange}
+                    // required
                   />
                 </FiledMargin>
               </FiledWrapper>

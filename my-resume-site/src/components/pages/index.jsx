@@ -8,7 +8,6 @@ import {
   NavbarWrapper,
   SidebarWrapper,
 } from "./HomeElements";
-
 function Home() {
   return (
     <>
