@@ -60,7 +60,6 @@ export const H3Container = styled.h3`
   width: 100%;
 `;
 export const H3Wrapper = styled.div`
-  /* display:block; */
   @media (min-width: 768px) {
     margin-left: 1rem;
     margin-right: 1rem;

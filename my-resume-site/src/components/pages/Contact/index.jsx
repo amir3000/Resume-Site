@@ -8,43 +8,55 @@ import {
   H3Title,
   FormFileds,
   FiledWrapper,
-  FiledMargin,
   InputFiled,
   BtnSubmit,
   MessageInput,
+  ErrorSection,
 } from "./ContactElements";
 const Contact = () => {
   const [state, setState] = useState({
-    name: "",
-    email: "",
-    message:'',
+    form: {
+      name: "",
+      email: "",
+      message: "",
+      subject: "",
+    },
     errors: {},
   });
 
   const schema = Joi.object({
-    name: Joi.string().alphanum().min(3).max(30).required(),
+    name: Joi.string().alphanum().min(3).max(30).required().label("Name"),
     email: Joi.string()
+      .label("Email")
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
-    message: Joi.string().required().min(5).max(500),
+    subject: Joi.string().alphanum().min(3).max(30).required().label("Subject"),
+    message: Joi.string().required().min(5).max(500).label('Message'),
   });
-  const validation = ()=> {
-    const result  = schema.validate( state, {abortEarly:true});
-    console.log(result);
-  }
-
- const handleChange = ({currentTarget : target})  => {
-  const tmp = {...state}
-  console.log(target.name);
-  tmp[target.name] = target.value;
-  setState(tmp)
-
- }
+  const validate = () => {
+    const result = schema.validate(state.form, { abortEarly: false });
+    if (!result.error) return null;
+    const errors = {};
+    for (const item of result.error.details) {
+      errors[item.path[0]] = item.message;
+    }
+    return errors;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const errors = validation()
-   };
+    const errors = validate();
+    console.log(errors);
+    setState({ ...state, errors: errors || {} });
+    if (errors) return;
+    console.log("submited");
+  };
+
+  const handleChange = ({ currentTarget: target }) => {
+    const tmp = { ...state };
+    tmp.form[target.name] = target.value;
+    setState(tmp);
+  };
 
   return (
     <>
@@ -57,69 +69,72 @@ const Contact = () => {
 
             <FormFileds id="frm-fileds">
               <FiledWrapper>
-                <FiledMargin>
-                  <InputFiled
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={state.name}
-                    onChange={handleChange}
-                    // required
-                  />
-                  
-                </FiledMargin>
+                {/* <FiledMargin> */}
+                <InputFiled
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={state.form.name}
+                  onChange={handleChange}
+                />
+                {state.errors && (
+                  <ErrorSection error={true}>{state.errors.name}</ErrorSection>
+                )}
               </FiledWrapper>
             </FormFileds>
 
             <FormFileds>
               <FiledWrapper>
-                <FiledMargin>
-                  <InputFiled
-                    type="Email"
-                    name="email"
-                    placeholder="Eamil:"
-                    value={state.email}
-                    onChange={handleChange}
-                  />
-                </FiledMargin>
+                <InputFiled
+                  type="text"
+                  name="email"
+                  placeholder="Eamil:"
+                  value={state.form.email}
+                  onChange={handleChange}
+                />
+                {state.errors && (
+                  <ErrorSection error={true}>{state.errors.email}</ErrorSection>
+                )}
               </FiledWrapper>
             </FormFileds>
 
             <FormFileds>
               <FiledWrapper>
-                <FiledMargin>
-                  <InputFiled
-                    type="text"
-                    name="subject"
-                    placeholder="Subject:"
-                    value={state.subject}
-                    onChange={handleChange}
-                    // required
-                  />
-                </FiledMargin>
+                <InputFiled
+                  type="text"
+                  name="subject"
+                  placeholder="Subject:"
+                  value={state.form.subject}
+                  onChange={handleChange}
+                />
+                {state.errors && (
+                  <ErrorSection error={true}>
+                    {state.errors.subject}
+                  </ErrorSection>
+                )}
               </FiledWrapper>
             </FormFileds>
 
             <FormFileds>
               <FiledWrapper>
-                <FiledMargin>
-                  <MessageInput
-                    rows="6"
-                    name="message"
-                    placeholder=" Your message"
-                    value={state.message}
-                    onChange={handleChange}
-                    // required
-                  />
-                </FiledMargin>
+                <MessageInput
+                  rows="6"
+                  name="message"
+                  placeholder=" Your message"
+                  value={state.form.message}
+                  onChange={handleChange}
+                />
+                {state.errors && (
+                  <ErrorSection error={true}>
+                    {state.errors.message}
+                  </ErrorSection>
+                )}
               </FiledWrapper>
             </FormFileds>
 
             <FormFileds>
               <FiledWrapper>
-                <FiledMargin>
-                  <BtnSubmit type="submit" value="Send Message" />
-                </FiledMargin>
+                <BtnSubmit type="submit" value="Send Message" />
               </FiledWrapper>
             </FormFileds>
           </FormElements>
