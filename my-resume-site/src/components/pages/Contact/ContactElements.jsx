@@ -39,7 +39,7 @@ export const H3Title = styled.h3`
   font-weight: 700;
 `;
 export const FormFileds = styled.div`
- margin: 0.75rem;
+  margin: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -63,6 +63,7 @@ export const InputFiled = styled.input`
   border-radius: 0.25rem;
   border-color: rgba(243, 244, 246, 1);
   background-color: rgba(255, 255, 255, 1);
+  margin: 12px;
 `;
 
 export const MessageInput = styled.textarea`
@@ -78,15 +79,13 @@ export const MessageInput = styled.textarea`
   border-color: rgba(243, 244, 246, 1);
   background-color: rgba(255, 255, 255, 1);
   resize: vertical;
+  margin: 12px;
 `;
 export const BtnSubmit = styled.input`
   letter-spacing: 0.025em;
   color: rgba(255, 255, 255, 1);
   text-align: center;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  line-height: 1.75rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
   border-width: 0px;
   border-radius: 0.25rem;
@@ -94,13 +93,11 @@ export const BtnSubmit = styled.input`
 `;
 export const ErrorSection = styled.div`
   width: 100%;
+  margin-top:-10px;
   color: #d52811ec;
-  border:none;
-  padding: 0.5rem ;
-  /* padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem; */
+  border: none;
+  padding: 0.5rem;
+  
   font-size: 0.875rem;
   line-height: 1.25rem;
   border-width: 1px;

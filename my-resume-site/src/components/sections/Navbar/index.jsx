@@ -57,6 +57,7 @@ const Navbar = () => {
         <Route path="Blog" element={<Blog />}></Route>
         <Route path="Contact" element={<Contact />}></Route>
         <Route path="About" element={<About />}></Route>
+        <Route path='*' element={<About/>}></Route>
       </Routes>
     </>
   );

@@ -31,7 +31,7 @@ const Contact = () => {
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
     subject: Joi.string().alphanum().min(3).max(30).required().label("Subject"),
-    message: Joi.string().required().min(5).max(500).label('Message'),
+    message: Joi.string().required().min(5).max(500).label("Message"),
   });
   const validate = () => {
     const result = schema.validate(state.form, { abortEarly: false });
@@ -60,16 +60,14 @@ const Contact = () => {
 
   return (
     <>
-      <SectionContainer>
+      <SectionContainer id ="main-section">
         <FormWrapper id="frm-wrp">
           <FormElements id="form-tag" onSubmit={handleSubmit}>
             <H3titleWrapp id="h3-wrp">
               <H3Title>Get in Touch</H3Title>
             </H3titleWrapp>
-
             <FormFileds id="frm-fileds">
-              <FiledWrapper>
-                {/* <FiledMargin> */}
+              <FiledWrapper id="fld-wrp">
                 <InputFiled
                   type="text"
                   name="name"
@@ -93,7 +91,7 @@ const Contact = () => {
                   onChange={handleChange}
                 />
                 {state.errors && (
-                  <ErrorSection error={true}>{state.errors.email}</ErrorSection>
+                  <ErrorSection>{state.errors.email}</ErrorSection>
                 )}
               </FiledWrapper>
             </FormFileds>
